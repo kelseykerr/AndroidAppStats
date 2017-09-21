@@ -6,60 +6,20 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/start_time"
+        android:id="@+id/full_wake_locks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
 
-        android:text="Start time: "
+        android:text="Full Wake Locks: "
         android:textSize="16dp" />
 
     <TextView
-        android:id="@+id/mobile_packets_received"
+        android:id="@+id/partial_wake_locks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Mobile Network Received: "
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/mobile_packets_sent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Mobile Network Sent: "
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/wifi_packets_received"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Wi-Fi Network Received: "
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/wifi_packets_sent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Wi-Fi Network Sent: "
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/wifi_wakeups"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Wifi Wakeups: "
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/mobile_wakeups"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Mobile Wakeups: "
+        android:text="Partial Wake Locks: "
         android:textSize="16dp" />
 
 </LinearLayout>
