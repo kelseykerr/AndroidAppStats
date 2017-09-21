@@ -14,8 +14,8 @@ public class AppStats {
     //from Memory Stats: "Mobile network: 22.21KB received, 8.76KB sent (packets 57 received, 73 sent)"
     private Integer mobilePacketsReceived;
     private Integer mobilePacketsSent;
-    private String mobileReceived;
-    private String mobileSent;
+    private Double mobileReceived;
+    private Double mobileSent;
 
     //from "Mobile radio active: 54s 541ms (6.0%) 10x @ 420 mspp"
     //54s 541ms (6.0%) 10x @ 420 mspp
@@ -24,8 +24,8 @@ public class AppStats {
     //from "Wi-Fi network: 59.20KB received, 20.24KB sent (packets 114 received, 126 sent)"
     private Integer wifiPacketsReceived;
     private Integer wifiPacketsSent;
-    private String wifiReceived;
-    private String wifiSent;
+    private Double wifiReceived;
+    private Double wifiSent;
 
 
 
@@ -58,19 +58,19 @@ public class AppStats {
         this.mobilePacketsSent = mobilePacketsSent;
     }
 
-    public String getMobileReceived() {
+    public Double getMobileReceived() {
         return mobileReceived;
     }
 
-    public void setMobileReceived(String mobileReceived) {
+    public void setMobileReceived(Double mobileReceived) {
         this.mobileReceived = mobileReceived;
     }
 
-    public String getMobileSent() {
+    public Double getMobileSent() {
         return mobileSent;
     }
 
-    public void setMobileSent(String mobileSent) {
+    public void setMobileSent(Double mobileSent) {
         this.mobileSent = mobileSent;
     }
 
@@ -98,19 +98,19 @@ public class AppStats {
         this.wifiPacketsSent = wifiPacketsSent;
     }
 
-    public String getWifiReceived() {
+    public Double getWifiReceived() {
         return wifiReceived;
     }
 
-    public void setWifiReceived(String wifiReceived) {
+    public void setWifiReceived(Double wifiReceived) {
         this.wifiReceived = wifiReceived;
     }
 
-    public String getWifiSent() {
+    public Double getWifiSent() {
         return wifiSent;
     }
 
-    public void setWifiSent(String wifiSent) {
+    public void setWifiSent(Double wifiSent) {
         this.wifiSent = wifiSent;
     }
 }

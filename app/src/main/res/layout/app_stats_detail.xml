@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+        android:text="Start time: "
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/mobile_packets_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Mobile Network Received: "
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/mobile_packets_sent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Mobile Network Sent: "
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/wifi_packets_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Wi-Fi Network Received: "
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/wifi_packets_sent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Wi-Fi Network Sent: "
+        android:textSize="16dp" />
+
+</LinearLayout>
