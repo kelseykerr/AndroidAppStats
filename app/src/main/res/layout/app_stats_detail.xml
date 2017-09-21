@@ -46,4 +46,20 @@
         android:text="Wi-Fi Network Sent: "
         android:textSize="16dp" />
 
+    <TextView
+        android:id="@+id/wifi_wakeups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Wifi Wakeups: "
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/mobile_wakeups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Mobile Wakeups: "
+        android:textSize="16dp" />
+
 </LinearLayout>

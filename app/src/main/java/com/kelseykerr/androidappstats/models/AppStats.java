@@ -27,6 +27,11 @@ public class AppStats {
     private Double wifiReceived;
     private Double wifiSent;
 
+    //from "Mobile radio AP wakeups:"
+    private Integer mobileWakeups;
+    //from "WiFi AP wakeups:"
+    private Integer wifiWakeups;
+
 
 
     public AppStats() {
@@ -112,5 +117,21 @@ public class AppStats {
 
     public void setWifiSent(Double wifiSent) {
         this.wifiSent = wifiSent;
+    }
+
+    public Integer getMobileWakeups() {
+        return mobileWakeups;
+    }
+
+    public void setMobileWakeups(Integer mobileWakeups) {
+        this.mobileWakeups = mobileWakeups;
+    }
+
+    public Integer getWifiWakeups() {
+        return wifiWakeups;
+    }
+
+    public void setWifiWakeups(Integer wifiWakeups) {
+        this.wifiWakeups = wifiWakeups;
     }
 }

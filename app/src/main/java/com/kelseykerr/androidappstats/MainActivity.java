@@ -116,6 +116,22 @@ public class MainActivity extends AppCompatActivity {
                     setMobileStats(line, appStats);
                 } else if (line.contains(WIFI_NETWORK_STRING)) {
                     setWifiStats(line, appStats);
+                } else if (line.contains(MOBILE_WAKEUPS_STRING)) {
+                    String wakeups = line.replace(MOBILE_WAKEUPS_STRING, "");
+                    Integer mobileWakeups = Integer.parseInt(wakeups.trim());
+                    if (appStats.getMobileWakeups() != null) {
+                        appStats.setMobileWakeups(appStats.getMobileWakeups() + mobileWakeups);
+                    } else {
+                        appStats.setMobileWakeups(mobileWakeups);
+                    }
+                } else if (line.contains(WIFI_WAKEUPS_STRING)) {
+                    String wakeups = line.replace(WIFI_WAKEUPS_STRING, "");
+                    Integer wifiWakeups = Integer.parseInt(wakeups.trim());
+                    if (appStats.getWifiWakeups() != null) {
+                        appStats.setWifiWakeups(appStats.getWifiWakeups() + wifiWakeups);
+                    } else {
+                        appStats.setWifiWakeups(wifiWakeups);
+                    }
                 }
                 line = bufferedReader.readLine();
             }
@@ -234,4 +250,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String START_TIME_STRING = "Current start time:";
     private static final String MOBILE_NETWORK_STRING = "Mobile network:";
     private static final String WIFI_NETWORK_STRING = "Wi-Fi network:";
+    private static final String MOBILE_WAKEUPS_STRING = "Mobile radio AP wakeups:";
+    private static final String WIFI_WAKEUPS_STRING = "WiFi AP wakeups:";
 }

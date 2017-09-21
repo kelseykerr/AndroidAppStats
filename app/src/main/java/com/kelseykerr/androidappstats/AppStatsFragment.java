@@ -27,6 +27,8 @@ public class AppStatsFragment extends DialogFragment {
     private TextView mobileSent;
     private TextView wifiReceived;
     private TextView wifiSent;
+    private TextView wifiWakeups;
+    private TextView mobileWakeups;
     AppStats appStats;
 
     public static AppStatsFragment newInstance(AppStats appStats) {
@@ -67,13 +69,25 @@ public class AppStatsFragment extends DialogFragment {
         startTime = (TextView) view.findViewById(R.id.start_time);
         startTime.setText("Start Time: " + appStats.getStartTime());
         mobileReceived = (TextView) view.findViewById(R.id.mobile_packets_received);
-        mobileReceived.setText("Mobile Network Received: " + appStats.getMobileReceived() + "KB, " + appStats.getMobilePacketsReceived() + " packets");
+        if (appStats.getMobileReceived() != null || appStats.getMobilePacketsReceived() != null) {
+            mobileReceived.setText("Mobile Network Received: " + appStats.getMobileReceived() + "KB, " + appStats.getMobilePacketsReceived() + " packets");
+        } else {
+            mobileReceived.setText("Mobile Network Received: 0KB, 0 packets");
+        }
         mobileSent = (TextView) view.findViewById(R.id.mobile_packets_sent);
-        mobileSent.setText("Mobile Network Sent: " + appStats.getMobileSent() + "KBm, " + appStats.getMobilePacketsSent() + " packets");
+        if (appStats.getMobileSent() != null || appStats.getMobilePacketsSent() != null) {
+            mobileSent.setText("Mobile Network Sent: " + appStats.getMobileSent() + "KB, " + appStats.getMobilePacketsSent() + " packets");
+        } else {
+            mobileSent.setText("Mobile Network Sent: 0KB, 0 packets");
+        }
         wifiReceived = (TextView) view.findViewById(R.id.wifi_packets_received);
         wifiReceived.setText("Wifi Network Received: " + appStats.getWifiReceived() + "KB, " + appStats.getWifiPacketsReceived() + " packets");
         wifiSent = (TextView) view.findViewById(R.id.wifi_packets_sent);
         wifiSent.setText("Wifi Network Sent: " + appStats.getWifiSent() + "KB, " + appStats.getWifiPacketsSent() + " packets");
+        wifiWakeups = (TextView) view.findViewById(R.id.wifi_wakeups);
+        wifiWakeups.setText("Wifi Wakeups: " + appStats.getWifiWakeups());
+        mobileWakeups = (TextView) view.findViewById(R.id.mobile_wakeups);
+        mobileWakeups.setText("Mobile Wakeups: " + appStats.getMobileWakeups());
         return view;
     }
 }
