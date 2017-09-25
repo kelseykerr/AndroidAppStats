@@ -5,10 +5,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,14 +19,9 @@ import com.kelseykerr.androidappstats.models.AppStats;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -96,10 +88,8 @@ public class MainActivity extends AppCompatActivity {
             Integer partialWakeLockCount = 0;
             Integer fullWakeLockCount = 0;
             while (line != null) {
-                Log.d(TAG, line);
                 String[] lineData = line.split(",");
                 String id = lineData[3];
-                Log.d(TAG, "id is [" + id + "]");
                 switch (id) {
                     case "uid":
                         if (lineData[5].equals(packageName)) {
@@ -109,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "wl":
                         if (lineData[1].equals(uid)) {
+                            Log.d(TAG, "wake lock found");
                             //line: 9,10145,l,wl,*alarm*,0,f,0,0,0,0,148,p,12,0,42,248,248,bp,12,0,42,248,0,w,0,0,0,0
                             //values: 0, 0, 0, 0, wake lock, full time, 'f', full count, partial time, 'p', partial count, window time, 'w', window count
                             if (!lineData[5].equals("0")) {
@@ -123,6 +114,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 line = bufferedReader.readLine();
             }
+            Log.d(TAG, "Full wake lock count is [" + fullWakeLockCount + "]");
+            Log.d(TAG, "Partial wake lock count is [" + partialWakeLockCount + "]");
             appStats.setFullWakeLocks(fullWakeLockCount);
             appStats.setPartialWakeLocks(partialWakeLockCount);
             return appStats;
